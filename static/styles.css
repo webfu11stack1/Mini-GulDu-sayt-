@@ -1,0 +1,535 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #00274d;
+    padding: 20px 0;
+    position: sticky; /* Add this */
+    top: 0; /* Ensures it sticks to the top */
+    z-index: 1000; /* Ensures it stays on top of other content */
+    width: 100%; /* Ensures it spans the full width */
+   
+    
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.language-switch {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* Pushes the language switcher to the right */
+}
+
+.language-switch a {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+    background-color: #0056b3; /* Background for language buttons */
+}
+
+.language-switch a:hover {
+    background-color: #0077e6; /* Slightly darker on hover */
+}
+
+.language-switch img {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    border-radius: 50%; /* Optional, adds a rounded look to the flags */
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    
+}
+.logo h2{
+    color: red;
+}
+
+.logo img {
+    width: 60px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+nav ul li {
+    margin-left: 25px; /* More space between the menu items */
+    position: relative; /* For adding hover effects like underline or highlight */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 12px 18px; /* Increased padding for more clickable area */
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.1); /* Transparent background for a button-like look */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #0056b3; /* Change background on hover */
+    color: white; /* Keep text white */
+    transform: translateY(-3px); /* Lift the item slightly on hover */
+}
+
+nav ul li a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #ffcc00; /* Add a yellow underline */
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+nav ul li a:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+nav ul li select {
+    background-color: rgba(0, 0, 0, 0.1); /* Same as other nav items */
+    color: white;
+    font-weight: bold;
+    padding: 12px 18px; /* Same padding as other links */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    appearance: none; /* Remove default arrow */
+    outline: none;
+    text-align: center; /* Center text inside the dropdown */
+}
+
+nav ul li select:hover {
+    background-color: #0056b3; /* Match hover effect with other links */
+    transform: translateY(-3px); /* Slight lift effect */
+}
+
+nav ul li select option {
+    background-color: white; /* Background for dropdown options */
+    color: black; /* Text color for options */
+}
+
+/* Optional: Add a custom dropdown arrow to match design */
+nav ul li::after {
+    content: '\25BC'; /* Unicode for arrow */
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: white;
+}
+
+
+
+.language-switch a {
+    color: white;
+    margin-left: 10px;
+}
+
+.hero {
+    position: relative;
+    height: 700px;
+}
+
+.hero-slider img {
+    width: 100%;
+    height: 700px;
+    object-fit: cover;
+    background-color: #000; /* Bo'sh joylarni qora fon bilan to'ldirish */
+}
+
+
+/* .overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+} */
+
+.faculties {
+    background-color: white;
+    padding: 50px;
+    text-align: center;
+}
+
+.faculty-cards {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+/* General style for the horizontal rule */
+hr {
+    border: none; /* Remove default border */
+    height: 2px; /* Set height */
+    background-color: #007BFF; /* Primary color */
+    margin: 20px 0; /* Space above and below */
+    border-radius: 5px; /* Rounded edges */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Optional: Style for horizontal rule with text */
+hr.styled-hr {
+    position: relative; /* For positioning text */
+    text-align: center; /* Center text */
+    margin: 40px 0; /* Space around the HR */
+}
+
+hr.styled-hr::before {
+    content: "----------------"; /* Decorative line or text */
+    position: absolute; /* Position the text */
+    left: 50%; /* Center it */
+    transform: translateX(-50%); /* Center adjustment */
+    background: white; /* Background color */
+    padding: 0 10px; /* Padding around text */
+    font-weight: bold; /* Bold text */
+    color: #007BFF; /* Text color */
+}
+
+
+.faculty-card {
+    width: 22%;
+    background-color: #183bc6;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+.faculty-card img {
+    border-top-left-radius: 50px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    height: 200px;
+    width: 200px;
+    box-shadow: 0px  rgb(252, 252, 252);
+}
+.faculty-card h3{
+    color: #ccc;
+}
+.faculty-card:hover {
+    transform: scale(1.05);
+}
+
+
+.detail-button {
+    background-color: #0af312; /* Bootstrap primary color */
+    color: white; /* Text color */
+    padding: 10px 20px; /* Padding for the button */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Cursor style */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Animation */
+    font-weight: bold; /* Bold text */
+    margin-top: 10px; /* Space between heading and button */
+}
+
+.detail-button:hover, .search-inp button:hover {
+    background-color: #0077cc;
+    transform: translateY(-3px);
+    transition: all 0.3s ease;
+}
+
+
+.detail-button:focus {
+    outline: none; /* Remove default outline */
+}
+
+/* Optional: Add box shadow for depth */
+.detail-button {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+}
+
+footer {
+    background-color: #00274d;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+.contact-us {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.contact-us h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.contact-info, .contact-form {
+    width: 45%;
+    background-color: rgb(51, 48, 48);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h3, .contact-form h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #f4f4f4;
+}
+
+.contact-info p {
+    font-size: 18px;
+    margin: 10px 0;
+    color: white;
+    margin: 40px;
+}
+
+.contact-info p i {
+    margin-right: 10px;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form input, .contact-form textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.contact-form button {
+    padding: 12px;
+    font-size: 16px;
+    color: white;
+    background-color: #11750a;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #00b306;
+}
+
+.map-container {
+    width: 100%;
+    margin-top: 30px;
+}
+.search {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.search-inp {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 30px;
+    padding: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    max-width: 5000px;
+    transition: box-shadow 0.3s ease;
+}
+
+.search-inp:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.search-inp input {
+    border: none;
+    border-radius: 30px;
+    padding: 12px 20px;
+    font-size: 16px;
+    flex-grow: 1;
+    outline: none;
+    color: #333;
+    background-color: #f4f4f4;
+    
+}
+
+.search-inp input::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+.search-inp button {
+    background-color: #ec6111;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 30px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.search-inp button i {
+    font-size: 18px;
+}
+
+.search-inp button:hover {
+    background-color: #e0a016;
+}
+
+/* Modal Background */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; 
+    z-index: 100; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Black with opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    margin: 10% auto; /* 10% from the top and centered */
+    padding: 20px;
+    width: 30%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+/* Close Button */
+.modal-content .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #888;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal-content .close:hover {
+    color: #000;
+}
+
+/* Modal Input Fields */
+.modal-content input[type="text"],
+.modal-content input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Modal Submit Button */
+.modal-content button {
+    width: 100%;
+    padding: 12px;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    background-color: #4cae4c;
+}
+
+/* Forgot Password Link */
+.modal-content p a {
+    font-size: 14px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.modal-content p a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .modal-content {
+        width: 90%; /* Make it more responsive */
+    }
+}
+
+/* Style for the "Tizimga kirish" button */
+.login-btn {
+    background-color: #03cc00; /* Dark blue color */
+    color: white;
+    border: none;
+  
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.login-btn:hover {
+    background-color: #4be923; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly grow on hover */
+}
+
+.login-btn:active {
+    background-color: #7fe73e; /* Even darker when clicked */
+    transform: scale(0.98); /* Slightly shrink on click */
+}
+
+.login-btn:focus {
+    outline: none; /* Remove outline */
+    box-shadow: 0 0 10px rgba(0, 102, 204, 0.8); /* Add glow effect on focus */
+}

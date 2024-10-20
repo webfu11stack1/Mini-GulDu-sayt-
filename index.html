@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universitet Sayti</title>
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="pic/unvlogo.png" alt="Universitet Logosi">
+                <h2>Guliston Davlat Universiteti</h2>
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="#">Universitet</a></li>
+                    <li><a href="#">Faoliyat</a></li>
+                    <li>
+                        <select id="faculty-select" onchange="location.href=this.value;">
+                            <option value="">Fakultetlar</option>
+                            <option value="#faculties">Axborot Texnologiyalari</option>
+                            <option value="#faculties">Filologiya</option>
+                            <option value="#faculties">Tabiiy Fanlar</option>
+                            <option value="#faculties">Tibbiyot</option>
+                        </select>
+                    </li>
+                    <li><a href="#">Abituriyentlarga</a></li>
+                    <li><a href="#contact-us">Kontaktlar</a></li>
+                </ul>
+            </nav>
+
+            <div class="language-switch">
+                <a href="#"><img src="https://flagcdn.com/uz.svg" alt="O'zbekcha"> O'z</a>
+                <a href="#"><img src="https://flagcdn.com/ru.svg" alt="russian"> Ru</a>
+            </div>
+
+            <button type="button" class="login-btn">Tizimga kirish</button>
+        </div>
+    </header>
+
+    <!-- Hero Section with Slider -->
+    <section class="hero">
+        <div class="hero-slider">
+            <img src="pic/guldu.jpg" alt="Slayder Image">
+            <img src="pic/gl.jpg" alt="Slayder Image">
+            <img src="pic/tbf.jpg" alt="Slayder Image">
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <div class="search">
+        <div class="search-inp">
+            <i class="fas fa-search"></i>
+            <input type="search" name="search" id="search" placeholder="Qidiruv ...">
+            <button type="button">Search</button>
+        </div>
+    </div>
+
+    <hr class="styled-hr">
+
+    <!-- Faculties Section -->
+    <section class="faculties" id="faculties">
+        <h2>Fakultetlar</h2>
+        <div class="faculty-cards">
+            <div class="faculty-card">
+                <img src="pic/axbf.png" alt="Axborot Texnologiyalari Fakulteti">
+                <h3>Axborot Texnologiyalari</h3>
+                <button type="button" class="detail-button">Batafsil</button>
+            </div>
+            <div class="faculty-card">
+                <img src="pic/guldufil.png" alt="Filologiya Fakulteti">
+                <h3>Filologiya</h3>
+                <button type="button" class="detail-button">Batafsil</button>
+            </div>
+            <div class="faculty-card">
+                <img src="pic/tbf.jpg" alt="Tabiiy Fanlar Fakulteti">
+                <h3>Tabiiy Fanlar</h3>
+                <button type="button" class="detail-button">Batafsil</button>
+            </div>
+            <div class="faculty-card">
+                <img src="pic/tff.png" alt="Tibbiyot Fakulteti">
+                <h3>Tibbiyot</h3>
+                <button type="button" class="detail-button">Batafsil</button>
+            </div>
+        </div>
+    </section>
+
+    <hr class="styled-hr">
+
+    <!-- Contact Us Section -->
+    <section class="contact-us" id="contact-us">
+        <h2>Biz bilan bog'laning</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Kontakt ma'lumotlari</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Manzil: Guliston shahri, 4-mavze Talabalar ko'chasi</p>
+                <p><i class="fas fa-phone"></i> Telefon: +998 (36) 225-40-42</p>
+                <p><i class="fas fa-envelope"></i> Email: info@guliston-university.uz</p>
+            </div>
+
+            <div class="contact-form">
+                <h3>Bizga xabar yuboring</h3>
+                <form action="#" method="POST">
+                    <input type="text" name="name" placeholder="Ismingiz" required>
+                    <input type="email" name="email" placeholder="Email manzilingiz" required>
+                    <textarea name="message" rows="5" placeholder="Xabar yozing..." required></textarea>
+                    <button type="submit">Yuborish</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Map container -->
+        <div class="map-container">
+            <iframe 
+                src="https://maps.google.ru/maps?f=q&source=s_q&hl=uz&geocode=&q=%D0%93%D1%8…t=m&ll=40.504533,68.784456&spn=0.011421,0.018239&z=13&iwloc=A&output=embed" 
+                width="100%" 
+                height="400" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <p>© 2024 Guliston Davlat Universiteti. Barcha huquqlar himoyalangan.</p>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Tizimga kirish</h2>
+            <form>
+                <input type="text" placeholder="Foydalanuvchi nomi" required>
+                <input type="password" placeholder="Parol" required>
+                <button type="submit">Kirish</button>
+                <p><a href="#">Parolingizni unutdingizmi?</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript File -->
+    <script src="script/script.js"></script>
+</body>
+</html>
